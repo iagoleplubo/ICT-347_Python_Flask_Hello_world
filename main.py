@@ -2,15 +2,6 @@ import os
 from flask import Flask
 from markupsafe import escape
 
-"""
-a faire : 
-
-lancer la creation du contenaire avec quel message afficher, quel port utiliser puis le démarrer 
-
-modifier le contenaire puis quand tu le ferme il se remet a 0
-
-"""
-
 
 # Crée une application flask
 app = Flask(__name__)

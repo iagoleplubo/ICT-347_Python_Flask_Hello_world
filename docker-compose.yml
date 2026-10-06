@@ -1,0 +1,10 @@
+services:
+  flask-hello:
+    build: .
+    image: flask-hello
+    container_name: flask-hello
+    ports:
+      # 8080 par defaut car sur mac le port 5000 est deja pris (AirPlay)
+      - "${PORT:-8080}:5000"
+    environment:
+      MESSAGE: "${MESSAGE:-Bienvenue depuis Docker}"
