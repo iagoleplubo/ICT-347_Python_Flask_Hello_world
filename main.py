@@ -1,3 +1,10 @@
+"""
+- Projet : Hello World en flask
+- Auteur : Iago Dolfini
+- Date : 05.10.2026
+"""
+
+
 import os
 from flask import Flask
 from markupsafe import escape
