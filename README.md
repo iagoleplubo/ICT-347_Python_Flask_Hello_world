@@ -4,6 +4,19 @@ Projet du module I347 (TP6171, sujet 2 : application Python Flask "Hello World")
 
 Le but est de mettre une petite application Flask dans un conteneur Docker. L'application affiche "Hello, World!" et un message en dessous. Ce message peut être changé au lancement du conteneur avec la variable d'environnement `MESSAGE`.
 
+## Lancer rapidement
+
+Si Docker est déjà installé :
+
+```bash
+git clone https://github.com/iagoleplubo/ICT-347_Python_Flask_Hello_world.git
+cd ICT-347_Python_Flask_Hello_world
+docker build -t flask-hello .
+docker run --rm --name flask-hello -p 8080:5000 flask-hello
+```
+
+Puis ouvrir http://localhost:8080.
+
 ## Contenu du projet
 
 - `main.py` : l'application Flask
@@ -14,7 +27,7 @@ Le but est de mettre une petite application Flask dans un conteneur Docker. L'ap
 
 ## Prérequis
 
-Il faut avoir Docker Desktop installé et démarré. On peut le télécharger sur https://www.docker.com/products/docker-desktop/ ou, sur Mac avec Homebrew :
+Il faut avoir Git et Docker Desktop installé et démarré. Python et Flask n'ont pas besoin d'être installés sur l'ordinateur, ils sont dans l'image. Docker Desktop se télécharge sur https://www.docker.com/products/docker-desktop/ (Windows, Mac ou Linux, les commandes sont les mêmes partout) ou, sur Mac avec Homebrew :
 
 ```bash
 brew install --cask docker-desktop
@@ -129,6 +142,16 @@ Pour tout arrêter :
 ```bash
 docker compose down
 ```
+
+## Arrêter et nettoyer
+
+```bash
+docker stop flask-hello
+docker compose down
+docker rmi flask-hello
+```
+
+`docker ps -a` et `docker images` permettent de vérifier qu'il ne reste rien.
 
 ## Le Dockerfile
 
